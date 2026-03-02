@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Egyptronix | Smart Technology Solutions</title>
+  <meta name="description" content="Egyptronix delivers modern electronics and smart technology solutions for homes and businesses.">
+  <link rel="icon" type="image/png" href="../Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img class="body-bg-image" src="../Logo.png" alt="Egyptronix background">
+  <div class="page-bg"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Egyptronix Home">
+      <img src="../Egyptronix.png" alt="Egyptronix logo">
+      <span>Egyptronix</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="auth-actions">
+      <button id="loginBtn" class="btn btn-ghost">Log In</button>
+      <button id="logoutBtn" class="btn btn-ghost hidden">Log Out</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="kicker">Future-Ready Electronics</p>
+        <h1>Professional Technology Experiences by Egyptronix</h1>
+        <p>
+          We build reliable product ecosystems for modern life. Discover our latest electronics collection and request details directly from our team.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#products">Browse Products</a>
+          <button id="openRegisterBtn" class="btn btn-ghost">Create Account</button>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="../Logo.png" alt="Egyptronix technology showcase">
+      </div>
+    </section>
+
+    <section class="section products" id="products">
+      <div class="section-head">
+        <p class="kicker">Catalog</p>
+        <h2>Featured Products</h2>
+        <p>Explore our current Egyptronix product catalog.</p>
+      </div>
+      <div id="productGrid" class="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="section-head">
+        <p class="kicker">Who We Are</p>
+        <h2>Technology You Can Trust</h2>
+      </div>
+      <p>
+        Egyptronix combines engineering quality with practical solutions. We focus on performance, reliability, and clean user experience across every product line.
+      </p>
+    </section>
+
+    <section class="section admin hidden" id="adminSection">
+      <div class="section-head">
+        <p class="kicker">Authorization Area</p>
+        <h2>Admin Panel</h2>
+        <p>Only users with the <strong>admin</strong> role can access this section.</p>
+      </div>
+      <form id="productForm" class="card form-card">
+        <h3>Add Product (Admin Only)</h3>
+        <label for="productName">Product Name</label>
+        <input id="productName" required>
+        <label for="productDesc">Description</label>
+        <textarea id="productDesc" rows="3" required></textarea>
+        <label for="productCategory">Category</label>
+        <input id="productCategory" required>
+        <button type="submit" class="btn btn-primary">Add Product</button>
+      </form>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="section-head">
+        <p class="kicker">Contact</p>
+        <h2>Talk With Egyptronix</h2>
+      </div>
+      <div class="contact-grid">
+        <p>Email: electronicsmasri@gmail.com</p>
+        <p>Phone: +961 76 086 829</p>
+        <p>Location: Lebanon, Beirut</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>(c) <span id="currentYear"></span> Egyptronix. All rights reserved.</p>
+  </footer>
+
+  <dialog id="authModal" class="auth-modal">
+    <div class="modal-tabs">
+      <button id="tabLogin" class="tab active">Log In</button>
+      <button id="tabRegister" class="tab">Register</button>
+    </div>
+    <form id="loginForm" class="auth-form">
+      <h3>Welcome Back</h3>
+      <label for="loginEmail">Email</label>
+      <input id="loginEmail" type="email" required>
+      <label for="loginPassword">Password</label>
+      <input id="loginPassword" type="password" required>
+      <button type="submit" class="btn btn-primary">Log In</button>
+    </form>
+    <form id="registerForm" class="auth-form hidden">
+      <h3>Create Account</h3>
+      <label for="registerName">Full Name</label>
+      <input id="registerName" required>
+      <label for="registerEmail">Email</label>
+      <input id="registerEmail" type="email" required>
+      <label for="registerPassword">Password</label>
+      <input id="registerPassword" type="password" minlength="6" required>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+    <button id="closeModalBtn" class="btn btn-ghost btn-close">Close</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
