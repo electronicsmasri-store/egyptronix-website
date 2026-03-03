@@ -1,142 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Egyptronix | Smart Technology Solutions</title>
-  <meta name="description"
-    content="Egyptronix delivers modern electronics and smart technology solutions for homes and businesses.">
-  <link rel="icon" type="image/png" href="Logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egyptronix | Smart Technology</title>
+    <link rel="icon" type="image/png" href="Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <img class="body-bg-image" src="Logo.png" alt="Egyptronix background">
-  <div class="page-bg"></div>
-  <header class="topbar">
-    <a class="brand" href="#home" aria-label="Egyptronix Home">
-      <img src="Egyptronix.png" alt="Egyptronix logo">
-      <span>Egyptronix</span>
-    </a>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#products">Products</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="auth-actions">
-      <button id="loginBtn" class="btn btn-ghost">Log In</button>
-      <button id="logoutBtn" class="btn btn-ghost hidden">Log Out</button>
-    </div>
-  </header>
+    <img class="body-bg-image" src="Logo.png" alt="Egyptronix background">
+    <div class="page-bg"></div>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-copy">
-        <p class="kicker">Future-Ready Electronics</p>
-        <h1>Professional Technology Experiences by Egyptronix</h1>
-        <p>
-          We build reliable product ecosystems for modern life. Discover our latest electronics collection and request
-          details directly from our team.
-        </p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#products">Browse Products</a>
-          <button id="openRegisterBtn" class="btn btn-ghost">Create Account</button>
-        </div>
-      </div>
-      <div class="hero-media">
-        <img src="Logo.png" alt="Egyptronix technology showcase">
-      </div>
-    </section>
+    <header class="topbar">
+        <a class="brand" href="index.html">
+            <img src="Egyptronix.png" alt="Egyptronix logo">
+            <span>Egyptronix</span>
+        </a>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="btn btn-ghost">Log In</button>
+    </header>
 
-    <section class="section products" id="products">
-      <div class="section-head">
-        <p class="kicker">Catalog</p>
-        <h2>Featured Products</h2>
-        <p>Explore our current Egyptronix product catalog.</p>
-      </div>
-      <div id="productGrid" class="product-grid" aria-live="polite"></div>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="kicker">Smart Technology Solutions</p>
+                <h1>Welcome to Egyptronix</h1>
+                <p class="hero-description">Discover our high-quality collection of power adapters and smart accessories designed for performance and safety.</p>
+                <div class="hero-actions">
+                    <a href="#products" class="btn btn-primary">View Catalogue</a>
+                    <a href="#about" class="btn btn-ghost">Learn More</a>
+                </div>
+            </div>
+        </section>
 
-    <section class="section about" id="about">
-      <div class="section-head">
-        <p class="kicker">Who We Are</p>
-        <h2>Technology You Can Trust</h2>
-      </div>
-      <p>
-        Egyptronix combines engineering quality with practical solutions. We focus on performance, reliability, and
-        clean user experience across every product line.
-      </p>
-    </section>
+        <section id="products" class="products-section">
+            <div class="section-header">
+                <p class="kicker">Our Collection</p>
+                <h2>Featured Adapters</h2>
+            </div>
+            
+            <div class="products-grid" style="display: flex; justify-content: center;">
+                <article class="card product-card" style="max-width: 500px; text-align: center;">
+                    <div class="card-image">
+                        <img src="TA845-45W.png" alt="Samsung Adapters Catalogue">
+                    </div>
+                    <div class="card-content">
+                        <p class="pill">Power System</p>
+                        <h3>Samsung Adapters Catalogue</h3>
+                        <p>Explore our High-Quality 25W and 45W Samsung adapters. Best performance for your Galaxy devices.</p>
+                        <div class="card-footer" style="flex-direction: column; gap: 10px;">
+                            <span class="price">Starting from $19.50</span>
+                            <a href="details.html" class="btn btn-primary" style="width: 100%;">View Full Details</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-    <section class="section admin hidden" id="adminSection">
-      <div class="section-head">
-        <p class="kicker">Authorization Area</p>
-        <h2>Admin Panel</h2>
-        <p>Only users with the <strong>admin</strong> role can access this section.</p>
-      </div>
-      <form id="productForm" class="card form-card">
-        <h3>Add Product (Admin Only)</h3>
-        <label for="productName">Product Name</label>
-        <input id="productName" required>
-        <label for="productDesc">Description</label>
-        <textarea id="productDesc" rows="3" required></textarea>
-        <label for="productCategory">Category</label>
-        <input id="productCategory" required>
-        <button type="submit" class="btn btn-primary">Add Product</button>
-      </form>
-    </section>
+        <section id="about" class="about-section" style="padding: 60px 20px; text-align: center;">
+            <div class="card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                <p class="kicker">Who We Are</p>
+                <h2>Technology You Can Trust</h2>
+                <p>At Egyptronix, we focus on providing premium electronic accessories. Every product in our catalogue is selected for its high quality and reliability.</p>
+            </div>
+        </section>
 
-    <section class="section contact" id="contact">
-      <div class="section-head">
-        <p class="kicker">Contact</p>
-        <h2>Talk With Egyptronix</h2>
-      </div>
-      <div class="contact-grid">
-        <p>Email: electronicsmasri@gmail.com</p>
-        <p>Phone: +961 76 086 829</p>
-        <p>Location: Lebanon, Beirut</p>
-      </div>
-    </section>
-  </main>
+        <section class="extra-info-section" style="margin: 40px auto; max-width: 800px; padding: 30px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+            <h3 style="color: #4da3ff; margin-bottom: 15px;">Fast & Reliable Support</h3>
+            <p style="color: #ccc; line-height: 1.6;">
+                Have questions about our Samsung Adapters? Our team is ready to help you choose the right power level for your device. 
+                All our products are High-Quality copies that guarantee safety.
+            </p>
+            <div style="margin-top: 20px;">
+                <a href="https://wa.me/YOUR_PHONE_NUMBER" class="btn btn-primary" style="background: #25D366; border: none; padding: 10px 25px;">
+                    Chat with us on WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
 
-  <footer class="site-footer">
-    <p>(c) <span id="currentYear"></span> Egyptronix. All rights reserved.</p>
-  </footer>
+    <footer class="main-footer" style="padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p>&copy; 2026 Egyptronix - Egyptronix System Verified. All rights reserved.</p>
+    </footer>
 
-  <dialog id="authModal" class="auth-modal">
-    <div class="modal-tabs">
-      <button id="tabLogin" class="tab active">Log In</button>
-      <button id="tabRegister" class="tab">Register</button>
-    </div>
-    <form id="loginForm" class="auth-form">
-      <h3>Welcome Back</h3>
-      <label for="loginEmail">Email</label>
-      <input id="loginEmail" type="email" required>
-      <label for="loginPassword">Password</label>
-      <input id="loginPassword" type="password" required>
-      <button type="submit" class="btn btn-primary">Log In</button>
-    </form>
-    <form id="registerForm" class="auth-form hidden">
-      <h3>Create Account</h3>
-      <label for="registerName">Full Name</label>
-      <input id="registerName" required>
-      <label for="registerEmail">Email</label>
-      <input id="registerEmail" type="email" required>
-      <label for="registerPassword">Password</label>
-      <input id="registerPassword" type="password" minlength="6" required>
-      <button type="submit" class="btn btn-primary">Register</button>
-    </form>
-    <button id="closeModalBtn" class="btn btn-ghost btn-close">Close</button>
-  </dialog>
-
-  <script src="script.js"></script>
 </body>
-
 </html>
