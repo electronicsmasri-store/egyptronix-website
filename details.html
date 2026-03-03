@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | Egyptronix</title>
+  <link rel="icon" type="image/png" href="Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="details-body">
+  <img class="body-bg-image" src="Logo.png" alt="Egyptronix background">
+  <div class="page-bg"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Back to Egyptronix Home">
+      <img src="Egyptronix.png" alt="Egyptronix logo">
+      <span>Egyptronix</span>
+    </a>
+    <a class="btn btn-ghost" href="index.html#products">Back to Products</a>
+  </header>
+
+  <main class="details-main">
+    <article id="detailsCard" class="card details-card">
+      <p class="kicker">Product Details</p>
+      <h1 id="detailsName">Loading...</h1>
+      <p id="detailsCategory" class="pill">Category</p>
+      <div class="details-media">
+        <img id="detailsImage" class="details-product-image" src="Logo.png" title="Egyptronix product image"
+          alt="Egyptronix product image">
+        <p id="detailsPrice" class="price-note details-price hidden"></p>
+      </div>
+      <p id="detailsDescription"></p>
+
+      <section id="videoPreviewCard" class="video-preview-card" aria-hidden="true">
+        <p class="kicker">Video Preview</p>
+        <h3 id="videoPreviewTitle">Watch The Product In Action</h3>
+        <p id="videoPreviewDescription">
+          See how this charger performs in a real-world review before placing your order.
+        </p>
+        <a id="videoPreviewLink" class="btn btn-primary video-preview-btn" href="#" target="_blank"
+          rel="noopener noreferrer">
+          Open TikTok Review
+        </a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
