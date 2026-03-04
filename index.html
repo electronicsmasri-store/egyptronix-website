@@ -27,6 +27,7 @@
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#home">Home</a>
       <a href="#products">Products</a>
+      <a href="#cart">Cart</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -62,6 +63,23 @@
         <p>Explore our current Egyptronix product catalog.</p>
       </div>
       <div id="productGrid" class="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="section cart-section" id="cart">
+      <div class="section-head">
+        <p class="kicker">Shopping Cart</p>
+        <h2>Secure Checkout</h2>
+        <p>Add products, then send your order via WhatsApp and Email in one checkout action.</p>
+      </div>
+      <article class="card cart-shell">
+        <div id="cartItems" class="cart-items" aria-live="polite"></div>
+        <p id="cartTotal" class="cart-total">Total: $0.00</p>
+        <button id="checkoutBtn" type="button" class="btn btn-checkout" disabled>Checkout</button>
+        <p class="cart-note">
+          Checkout sends your order details to WhatsApp (+961 76 086 829) and
+          muhammadmasri641@gmail.com.
+        </p>
+      </article>
     </section>
 
     <section class="section about" id="about">
@@ -134,8 +152,8 @@
               </svg>
               <span>Facebook</span>
             </a>
-            <a class="social-glass" data-social-link="tiktok" href="https://www.tiktok.com/@EgeptronixMasri"
-              target="_blank" rel="noopener noreferrer" aria-label="Open Egeptronix Masri TikTok profile">
+            <a class="social-glass" data-social-link="tiktok" href="https://www.tiktok.com/@masrielectronics8"
+              target="_blank" rel="noopener noreferrer" aria-label="Open @masrielectronics8 TikTok profile">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M14.5 3v9.2a3.4 3.4 0 1 1-3.4-3.4c.3 0 .6 0 .9.1V6.4a6.8 6.8 0 1 0 5.1 6.6V8.3c1 .8 2.2 1.2 3.5 1.3V7a3.9 3.9 0 0 1-2.1-.7A4 4 0 0 1 16.8 3h-2.3Z"
@@ -143,8 +161,8 @@
               </svg>
               <span>TikTok</span>
             </a>
-            <a class="social-glass" href="https://www.instagram.com/egyptronix" target="_blank"
-              rel="noopener noreferrer" aria-label="Open Egyptronix Instagram profile">
+            <a class="social-glass" data-social-link="instagram" href="https://www.instagram.com/egyptronix"
+              target="_blank" rel="noopener noreferrer" aria-label="Open Egyptronix Instagram profile">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="3.5" y="3.5" width="17" height="17" rx="5" ry="5" fill="none" stroke="currentColor"
                   stroke-width="1.8" />
@@ -154,6 +172,7 @@
               <span>Instagram</span>
             </a>
           </div>
+          <p class="social-profile-note">IT Expert - Providing the best fast chargers (GaN) | Contact: 76086829</p>
         </aside>
       </div>
       <p class="developer-tag">Developed by Egeptronix Masri - Beirut.</p>
@@ -170,6 +189,83 @@
   <footer class="site-footer">
     <p>(c) <span id="currentYear"></span> Egyptronix. All rights reserved.</p>
   </footer>
+
+  <dialog id="productDetailsModal" class="product-modal">
+    <article class="product-modal-card">
+      <div class="product-modal-head">
+        <h3 id="productModalName">Product</h3>
+        <button id="closeProductModalBtn" type="button" class="btn btn-ghost product-modal-close">Close</button>
+      </div>
+      <p id="productModalCategory" class="pill">Category</p>
+
+      <section class="product-modal-media product-modal-gallery" aria-label="Product image gallery">
+        <img id="productModalImage" class="product-modal-image" src="TA800-25W.png" alt="Egyptronix product image">
+        <div id="productModalThumbs" class="product-modal-thumbs" aria-label="Product image gallery"></div>
+      </section>
+
+      <div class="product-modal-price-offer">
+        <p id="productModalPrice" class="price-note product-modal-price">Price</p>
+        <span class="product-modal-discount">March Expo 10% OFF</span>
+      </div>
+
+      <p id="productModalDescription" class="product-modal-description"></p>
+      <ul id="productModalSpecs" class="product-modal-specs"></ul>
+
+      <div class="product-modal-variations">
+        <section class="variation-group" aria-label="Color options">
+          <p class="variation-title">Color</p>
+          <div class="variation-options" data-variation-group="color">
+            <button type="button" class="variation-btn" data-variation-group="color" data-variation-value="Black">Black</button>
+            <button type="button" class="variation-btn" data-variation-group="color" data-variation-value="White">White</button>
+          </div>
+        </section>
+        <section class="variation-group" aria-label="Socket options">
+          <p class="variation-title">Socket Standard</p>
+          <div class="variation-options" data-variation-group="socket">
+            <button type="button" class="variation-btn" data-variation-group="socket" data-variation-value="EU">EU</button>
+            <button type="button" class="variation-btn" data-variation-group="socket" data-variation-value="US">US</button>
+          </div>
+        </section>
+      </div>
+
+      <p id="productModalStatus" class="buy-confirmation" aria-live="polite">Preparing secure checkout...</p>
+
+      <div class="product-modal-proof" aria-label="Social trust verification">
+        <a id="productModalFacebook" class="proof-link" href="https://www.facebook.com/EgeptronixMasri" target="_blank"
+          rel="noopener noreferrer" aria-label="Verify on Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M13.8 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.6 1.6-1.6h1.7V3.5A20.8 20.8 0 0 0 14.7 3c-2.4 0-4 1.5-4 4.3v2.4H8V13h2.7v8h3.1Z"
+              fill="currentColor" />
+          </svg>
+          <span>Facebook</span>
+        </a>
+        <a id="productModalTikTok" class="proof-link" href="https://www.tiktok.com/@masrielectronics8" target="_blank"
+          rel="noopener noreferrer" aria-label="Verify on TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M14.5 3v9.2a3.4 3.4 0 1 1-3.4-3.4c.3 0 .6 0 .9.1V6.4a6.8 6.8 0 1 0 5.1 6.6V8.3c1 .8 2.2 1.2 3.5 1.3V7a3.9 3.9 0 0 1-2.1-.7A4 4 0 0 1 16.8 3h-2.3Z"
+              fill="currentColor" />
+          </svg>
+          <span>TikTok</span>
+        </a>
+      </div>
+
+      <div class="product-modal-action-bar">
+        <button id="productModalAddToCartBtn" type="button" class="btn btn-ghost modal-cart-btn"
+          aria-label="Add to Cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 6h14l-1.5 8.5a2 2 0 0 1-2 1.5H9.4a2 2 0 0 1-2-1.6L5.4 4.8H3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="10" cy="20" r="1.4" fill="currentColor" />
+            <circle cx="17" cy="20" r="1.4" fill="currentColor" />
+          </svg>
+          <span>Add to Cart</span>
+        </button>
+        <button id="productModalChatBtn" type="button" class="btn btn-ghost modal-chat-btn">Chat Now</button>
+        <button id="productModalStartOrderBtn" type="button" class="btn btn-primary modal-order-btn">Start Order</button>
+      </div>
+    </article>
+  </dialog>
 
   <dialog id="authModal" class="auth-modal">
     <div class="modal-tabs">
